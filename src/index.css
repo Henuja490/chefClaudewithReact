@@ -1,6 +1,6 @@
 *{
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Poppins;
 }
 
 .navbar{
@@ -15,7 +15,7 @@
 }
 
 .navbar > h1 {
-    font-weight: 200;
+    font-weight: 600;
 }
 
 .Main {
@@ -51,4 +51,27 @@
 .add_ingredient > button::before{
     content: "+";
     margin-right: 5px;
+}
+
+
+li{
+    padding: 5px;
+}
+
+.get-recipe{
+    border: 0.5px solid gray;
+    display: flex;
+    background-color: gray;
+    margin: 15px 0px;
+    padding: 15px;
+    color: white;
+    border-radius: 5px;
+    justify-content: space-between;
+}
+
+.getRecipe{
+    border: none;
+    border-radius: 5px;
+    color: #FAFAF8; 
+    background-color: rgba(255, 0, 0, 0.441);
 }

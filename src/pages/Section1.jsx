@@ -13,11 +13,11 @@ function Section1(props) {
             {ingredientList}
           </ul>
           {props.ingeredient.length>3 &&<div className='get-recipe'>
-            <div>
+            <div >
               <h3>Ready for recipe</h3>
               <p>Generate a recipe from your list of ingredients</p>
             </div>
-            <button onClick={props.toggleRecipe}>Get a recipe</button>
+            <button onClick={props.toggleRecipe} className='getRecipe'>Get a recipe</button>
           </div>}
         </section>
     </div>
