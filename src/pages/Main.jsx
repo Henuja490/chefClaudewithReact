@@ -2,10 +2,11 @@ import React from 'react'
 import { useState } from 'react';
 import Section1 from './section1';
 import Section2 from './section2';
+import { getRecipeFromMistral } from '../assets/ai';
 
 function Main() {
   let [ingredients ,setIngredients] = useState([]);
-  let [recipeShown , setRecipeShown]= useState(false);
+  let [recipeShown , setRecipeShown]= useState("");
   function Submit(event) {
     event.preventDefault();
     const el = event.currentTarget;
@@ -14,8 +15,9 @@ function Main() {
     setIngredients(prevIngredients => [...prevIngredients,ingeredient]);
     
   }
-  function toggleRecipe() {
-    setRecipeShown(true);
+  async function toggleRecipe() {
+    const answer = await getRecipeFromMistral(ingredients)
+    setRecipeShown(answer)
   }
 
   
@@ -33,7 +35,7 @@ function Main() {
         </form><br /><br />
         
         {ingredients.length >0 && <Section1 ingeredient={ingredients} toggleRecipe={toggleRecipe}/>}
-        {recipeShown && <Section2 />}
+        {recipeShown && <Section2 recipe={recipeShown}/>}
         
     </div>
   )
